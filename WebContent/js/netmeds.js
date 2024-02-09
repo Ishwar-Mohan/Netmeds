@@ -10,9 +10,9 @@ function ValidateRegistration()
 	this.password = password;
 	this.address = address;
 	this.confirmPasswordAfter = confirmPasswordAfter;
-    this.checkState = checkState;
-    this.checkCity = checkCity;
-    this.landmark = landmark;
+	this.checkState = checkState;
+	this.checkCity = checkCity;
+	this.landmark = landmark;
 	this.onReset = onReset;
 	this.pincode = pincode;
 	this.onSubmitValidate = onSubmitValidate;
@@ -32,16 +32,16 @@ function ValidateRegistration()
 	var passwordBool = false;
 	var confirmPasswordBool = false;
 	var checkStateBool = false;
-    var checkCityBool = false;
+        var checkCityBool = false;
 	var addressBool = false;
 	var pincodeBool = false;
 	var landmarkBool = false;
 
 	function firstName()
-    {
+    	{
 		var firstName = $('#first-name');
 		if(firstName.val() == "")
-        {
+       		{
 			$('#errFirstName').text("Please enter the First name.");
 			firstNameBool = false;
 		}
@@ -52,7 +52,7 @@ function ValidateRegistration()
 	};
 
 	function firstNameRegEx()
-    {
+    	{
 		var firstName = $('#first-name');
 		var regExN = /^[a-zA-Z]+[^\d]$/gm;
 		var regExD = /[0-9!$%^&*\()_+|@#~=`{$\s}\-[\]:\";\'<>?,.\/\\[\]]/gm;
@@ -60,17 +60,17 @@ function ValidateRegistration()
 		firstName.val(firstName.val().replace(regExD,""));
 
 		if(firstName.val() == "")
-        {
+        	{
 			$('#errFirstName').text("Please enter the first name.");
 			firstNameBool = false;
 		}
-        else if(regExN.test(firstName.val()))
-        {
+        	else if(regExN.test(firstName.val()))
+        	{
 			$('#errFirstName').text("");
 			firstNameBool = true;
 		}
-        else
-        {
+        	else
+        	{
 			$('#errFirstName').text("Please Enter proper first name");
 			firstNameBool = false;
 		}
@@ -91,7 +91,8 @@ function ValidateRegistration()
 		}
 	};
 
-	function lastNameRegEx(){
+	function lastNameRegEx()
+	{
 		var lastName = $('#last-name');
 		var regExN = /^[a-zA-Z]+[^\d]$/gm;
 		var regExD = /[0-9!$%^&*\()_+|@#~=`{$\s}\-[\]:\";\'<>?,.\/\\[\]]/gm;
@@ -99,23 +100,24 @@ function ValidateRegistration()
 		lastName.val(lastName.val().replace(regExD,""));
 
 		if(lastName.val() == "")
-        {
+        	{
 			$('#errLastName').text("Please enter the last name.");
 			lastNameBool = false;
 		}
-        else if(regExN.test(lastName.val()))
-        {
+        	else if(regExN.test(lastName.val()))
+        	{
 			$('#errLastName').text("");
 			lastNameBool = true;
 		}
-        else
-        {
+       		else
+        	{
 			$('#errLastName').text("Please Enter proper last name");
 			lastNameBool = false;
 		}
 	};
 
-	function emailId(){
+	function emailId()
+	{
 		var emailId = $('#emailId');
 
 		if(emailId.val() == "")
@@ -129,7 +131,8 @@ function ValidateRegistration()
 		}
 	};
 	
-	function emailIdRegEx(){
+	function emailIdRegEx()
+	{
 		var emailId = $('#emailId');
 		var regExEmail = /^[a-z].+[\d]*@[a-z]+\.[a-z.]{2,6}$/g;
 		var regExE = /[!%^()+|#~=`{}\[\]:\";\'<>?,\/\\[\s\]]/g;
@@ -140,10 +143,13 @@ function ValidateRegistration()
 		{
 			$('#errEmailId').text("Please enter your EmailId");
 			emailIdBool = false;
-		}else if(regExEmail.test(emailId.val())){
+		}
+		else if(regExEmail.test(emailId.val())){
 			$('#errEmailId').text("");
 			emailIdBool = true;
-		}else{
+		}
+		else
+		{
 			$('#errEmailId').text("Please Enter proper EmailId");
 			emailIdBool = false;
 		}
@@ -172,7 +178,8 @@ function ValidateRegistration()
 				});
 	};
 
-	function mobileNumber(){
+	function mobileNumber()
+	{
 		var mobileNumber = $('#mobile-number');
 
 		if(mobileNumber.val() == "")
@@ -211,7 +218,8 @@ function ValidateRegistration()
 		}
 	};
 
-	function address(){
+	function address()
+	{
 		var address = $('#address');
 
 		if(address.val() == "")
@@ -348,78 +356,78 @@ function ValidateRegistration()
 		$('#errEmailId').text("");
 		$('#errMobNumber').text("");
 		$('#errAddress').text("");
-        $('#errState').text("");
-        $('#errCity').text("");
+        	$('#errState').text("");
+        	$('#errCity').text("");
 		$('#errPassword').text("");
 		$('#errConfirmPassword').text("");
 		$('#errPincode').text("");
 		$('#errLandmark').text("");
 	};
 
-    function checkState()
-    {
-        var state = $('#state').val();
+    	function checkState()
+    	{
+        	var state = $('#state').val();
 
-        if(state == null || state == 0)
-        {
-            $('#errState').text("select state");
+        	if(state == null || state == 0)
+        	{
+            		$('#errState').text("select state");
 			checkStateBool = false;
-        }
-        else
-        {
-            $('#errState').text("");
+        	}
+       		else
+        	{
+            		$('#errState').text("");
 			checkStateBool = true;
-        }
-    };
+        	}
+    	};
 
-    function checkCity()
-    {
-        var city = $('#city-r').val();
+    	function checkCity()
+    	{
+        	var city = $('#city-r').val();
 
-        if(city == null || city == 0)
-        {
-            $('#errCity').text("select city");
+        	if(city == null || city == 0)
+        	{
+            		$('#errCity').text("select city");
 			checkCityBool = false;
-        }
-        else
-        {
-            $('#errCity').text("");
+        	}
+        	else
+        	{
+           		$('#errCity').text("");
 			checkCityBool = true;
-        }
-    };
+        	}
+    	};
     
-    function pincode()
-    {
-    	var pincode = $('#pincode-r').val();
+    	function pincode()
+    	{
+    		var pincode = $('#pincode-r').val();
 
-        if(pincode == "")
-        {
-            $('#errPincode').text("Add pincode");
+        	if(pincode == "")
+        	{
+            		$('#errPincode').text("Add pincode");
 			pincodeBool = false;
-        }
-        else
-        {
-            $('#errPincode').text("");
-            pincodeBool = true;
-        }
-    };
+        	}
+        	else
+        	{
+            		$('#errPincode').text("");
+            		pincodeBool = true;
+        	}
+    	};
     
-    function onChangeAddress()
-    {
-    	if(mobileNumberBool == false)
+    	function onChangeAddress()
+    	{
+    		if(mobileNumberBool == false)
 			this.mobileNumber();
 		else if(addressBool == false)
 			this.address();
-        else if(checkStateBool == false)
-            this.checkState();
-        else if(checkCityBool == false)
-            this.checkCity();
+        	else if(checkStateBool == false)
+            		this.checkState();
+        	else if(checkCityBool == false)
+            		this.checkCity();
 		else if(mobileNumberBool && addressBool && checkStateBool && checkCityBool == true)
 		{
 			$('#change-address-form').submit();
 			this.onReset();
 		}
-    };
+    	};
     
 	function onSubmitValidate()
 	{
@@ -436,12 +444,12 @@ function ValidateRegistration()
 			this.mobileNumberRegEx();
 		else if(addressBool == false)
 			this.address();
-        else if(checkStateBool == false)
-            this.checkState();
-        else if(checkCityBool == false)
-            this.checkCity();
-        else if(pincodeBool == false)
-            this.pincode();
+        	else if(checkStateBool == false)
+            		this.checkState();
+        	else if(checkCityBool == false)
+            		this.checkCity();
+        	else if(pincodeBool == false)
+            		this.pincode();
 		else if(passwordBool == false)
 			this.passwordRegEx();
 		else if(confirmPasswordBool == false)
@@ -641,7 +649,8 @@ function ajaxRequest()
 	function addSubCategory()
 	{	
 		checkSubCategory();
-		if($('#main-category-add').val() == null || $('#main-category-add').val() == "" || $('#main-category-add').val() == 0){
+		if($('#main-category-add').val() == null || $('#main-category-add').val() == "" || $('#main-category-add').val() == 0)
+		{
 			$('#errSubCategoryPresent').text("Select main Category First");
 			subCategoryBool = false;
 		}
@@ -696,7 +705,8 @@ function ajaxRequest()
 	function addCity()
 	{	
 		checkSubCategory();
-		if($('#state').val() == null || $('#state').val() == "" || $('#state').val() == 0){
+		if($('#state').val() == null || $('#state').val() == "" || $('#state').val() == 0)
+		{
 			$('#errCityPresent').text("Select main Category First");
 			subCategoryBool = false;
 		}
@@ -738,7 +748,8 @@ function ajaxRequest()
 				{
 					var data = JSON.parse(msg);
 					
-					if(msg == null || "" == msg){
+					if(msg == null || "" == msg)
+					{
 						console.log("not placed");
 					}
 					else
@@ -838,20 +849,20 @@ function ajaxRequest()
 						var product = data[itr];
 
 						str += "<div class=\"product-cart\">";
-					    str += "<div class=\"product-img-container\">";
-					    str += "<img src=\"" + contextPath + "/images/" + product.product_image + "\" alt=\"image not found\">";
-					    str += "</div>";
-					    str += "<h4 class=\"product-name\">" + product.product_name + "</h4>";
-					    str += "<p class=\"mkt\">MKT: " + product.manufacturer + "</p>";
-					    str += "<div class=\"best-price\">";
-					    str += "<h4>Best price*</h4>";
-					    str += "<h4 class=\"best-price-rs\">Rs." + product.price + "</h4>";
-					    str += "</div>";
-					    str += "<div class=\"mrp-container\">";
-					    str += "<p>MRP </p><p class=\"mrp\">Rs. " + product.mrp + "</p>";
-					    str += "</div>";
-					    str += "<input type=\"button\" value=\"ADD TO CART\" class=\"btn\" id=\"addToCart-btn\" onclick=\"ajaxRequest.addToCart(" + product.productId + ")\">";
-					    str += "</div>";
+					    	str += "<div class=\"product-img-container\">";
+					    	str += "<img src=\"" + contextPath + "/images/" + product.product_image + "\" alt=\"image not found\">";
+					    	str += "</div>";
+						str += "<h4 class=\"product-name\">" + product.product_name + "</h4>";
+						str += "<p class=\"mkt\">MKT: " + product.manufacturer + "</p>";
+						str += "<div class=\"best-price\">";
+					     	str += "<h4>Best price*</h4>";
+					    	str += "<h4 class=\"best-price-rs\">Rs." + product.price + "</h4>";
+					    	str += "</div>";
+					    	str += "<div class=\"mrp-container\">";
+					    	str += "<p>MRP </p><p class=\"mrp\">Rs. " + product.mrp + "</p>";
+					    	str += "</div>";
+					    	str += "<input type=\"button\" value=\"ADD TO CART\" class=\"btn\" id=\"addToCart-btn\" onclick=\"ajaxRequest.addToCart(" + product.productId + ")\">";
+					    	str += "</div>";
 					}
 			
 					str += "</div>";
@@ -878,20 +889,20 @@ function ajaxRequest()
 						var product = data[itr];
 
 						str += "<div class=\"product-cart\">";
-					    str += "<div class=\"product-img-container\">";
-					    str += "<img src=\"" + contextPath + "/images/" + product.product_image + "\" alt=\"image not found\">";
-					    str += "</div>";
-					    str += "<h4 class=\"product-name\">" + product.product_name + "</h4>";
-					    str += "<p class=\"mkt\">MKT: " + product.manufacturer + "</p>";
-					    str += "<div class=\"best-price\">";
-					    str += "<h4>Best price*</h4>";
-					    str += "<h4 class=\"best-price-rs\">Rs." + product.price + "</h4>";
-					    str += "</div>";
-					    str += "<div class=\"mrp-container\">";
-					    str += "<p>MRP </p><p class=\"mrp\">Rs. " + product.mrp + "</p>";
-					    str += "</div>";
-					    str += "<input type=\"button\" value=\"ADD TO CART\" class=\"btn\" id=\"addToCart-btn\" onclick=\"ajaxRequest.addToCart(" + product.productId + ")\">";
-					    str += "</div>";
+					    	str += "<div class=\"product-img-container\">";
+					    	str += "<img src=\"" + contextPath + "/images/" + product.product_image + "\" alt=\"image not found\">";
+					    	str += "</div>";
+						str += "<h4 class=\"product-name\">" + product.product_name + "</h4>";
+						str += "<p class=\"mkt\">MKT: " + product.manufacturer + "</p>";
+						str += "<div class=\"best-price\">";
+						str += "<h4>Best price*</h4>";
+						str += "<h4 class=\"best-price-rs\">Rs." + product.price + "</h4>";
+						str += "</div>";
+						str += "<div class=\"mrp-container\">";
+						str += "<p>MRP </p><p class=\"mrp\">Rs. " + product.mrp + "</p>";
+						str += "</div>";
+						str += "<input type=\"button\" value=\"ADD TO CART\" class=\"btn\" id=\"addToCart-btn\" onclick=\"ajaxRequest.addToCart(" + product.productId + ")\">";
+						str += "</div>";
 					}
 			
 					str += "</div>";
@@ -1112,41 +1123,41 @@ function validateProductAdd()
 	
 	function checkCategory()
 	{
-        var category = $('#main-category').val();
+        	var category = $('#main-category').val();
 
-        if(category == null || category == 0)
-        {
-            $('#cat-err').text("select category");
-            categoryBool = false;
-        }
-        else
-        {
-            $('#cat-err').text("");
-            categoryBool = true;
-        }
-    };
+        	if(category == null || category == 0)
+        	{
+            		$('#cat-err').text("select category");
+            		categoryBool = false;
+        	}
+        	else
+        	{
+            		$('#cat-err').text("");
+            		categoryBool = true;
+        	}
+    	};
 
-    function checkSubCategory()
-    {
-        var subCategory = $('#sub-category-p').val();
+    	function checkSubCategory()
+    	{
+     		var subCategory = $('#sub-category-p').val();
 
-        if(subCategory == null || subCategory == 0)
-        {
-            $('#sub-cat-err').text("select sub-category");
-            subCategoryBool = false;
-        }
-        else
-        {
-            $('#sub-cat-err').text("");
-            subCategoryBool = true;
-        }
-    };
+        	if(subCategory == null || subCategory == 0)
+        	{
+            		$('#sub-cat-err').text("select sub-category");
+            		subCategoryBool = false;
+        	}
+        	else
+        	{
+            		$('#sub-cat-err').text("");
+            		subCategoryBool = true;
+        	}
+    	};
     
-    function checkregEx(validate)
-    {
-    	var regExM = /[a-zA-Z!$%^&*\()_+|@#~=`{.}\-[\]:\";\'<>?,\.\/\\[\s\]]/;
-    	$(validate).val($(validate).val().replace(regExM, ""));
-    };
+    	function checkregEx(validate)
+    	{
+    		var regExM = /[a-zA-Z!$%^&*\()_+|@#~=`{.}\-[\]:\";\'<>?,\.\/\\[\s\]]/;
+    		$(validate).val($(validate).val().replace(regExM, ""));
+    	};
 
 	function onReset() 
 	{
