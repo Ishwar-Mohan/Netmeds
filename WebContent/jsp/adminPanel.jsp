@@ -35,9 +35,11 @@
 		                </div>
 		                <div class="whoes-login">
 		                    	<h4>
-		                    	<% if (loggedInUser != null) { %>
-		            			Hi <%= loggedInUser %>
-		        		<% } %>
+		                    	<% 	if (loggedInUser != null) 
+						{ 
+					%>
+		            			Hi <%=	loggedInUser	%>
+		        		<% 	} %>
 		                    	</h4>
 		                </div>
 		                <% if (loggedInUser == null) { %>
@@ -52,11 +54,14 @@
 		                        	<div class="clr"></div>
 		                   	 </div>
 		                 </div>
-		                 <% }else{ %>
+		                 <% 	}
+					else
+					{ 
+				%>
 		                    	<a href="<%= request.getContextPath() %>/jsp/logout.jsp" class="logout-btn">
 		                		Logout
 		                	</a>
-		                <% } %>
+		                <% 	}	%>
 		                <div class="clr"></div>
 		            </nav>
 		</header>
@@ -80,7 +85,8 @@
 					<option value="0">Select Category</option>
 					<% 
 						List mainCategoryList = (List) Helper.getMainCategory();
-						for(int i=0; i < mainCategoryList.size(); i++){
+						for(int i=0; i < mainCategoryList.size(); i++)
+						{
 							Map mainCategory = (Map) mainCategoryList.get(i);
 					%>
 					<option value="<%= mainCategory.get("categoryId") %>"><%= mainCategory.get("categoryName") %></option>
@@ -115,11 +121,12 @@
 					<option value="0">Select State</option>
 					<%
 						Map stateMapO = (Map) Helper.getAllStates();
-						for(int i=0; i< stateMapO.size(); i++){
-						Map stateMap = (Map) stateMapO.get(Integer.toString(i));
+						for(int i=0; i< stateMapO.size(); i++)
+						{
+							Map stateMap = (Map) stateMapO.get(Integer.toString(i));
 					%>
 					<option value="<%= stateMap.get("stateName") %>"><%= stateMap.get("stateName") %></option>
-					<% } %>
+					<% 	}	%>
 				</select>
 			</div>
 			<div class="l-fields">
