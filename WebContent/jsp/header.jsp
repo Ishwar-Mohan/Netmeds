@@ -13,11 +13,13 @@
 		Map map = (Map) session.getAttribute("map");
 		String loggedInUser = (map != null && map.containsKey("first-name")) ? (String) map.get("first-name") : null;
 		Long count = Long.valueOf(0);
+
 		if(loggedInUser != null)
 		{
 			count = Helper.getAddToCartProductsCount(map.get("customerId").toString());
+
 			if(count == null || count == Long.valueOf(0))
-			count = Long.valueOf(0);
+				count = Long.valueOf(0);
 		}
 		else
 		{
@@ -40,9 +42,11 @@
 				</div>
 				<div class="whoes-login">
 					<h4>
-					<% if (loggedInUser != null) { %>
-						Hi <%= loggedInUser %>
-						<% } %>
+					<% 	if (loggedInUser != null) 
+						{ 
+					%>
+						Hi <%=	loggedInUser	%>
+					<% 	} 	%>
 					</h4>
 				</div>
 				<a href="<%= request.getContextPath() %>/jsp/addToCart.jsp">
@@ -52,7 +56,9 @@
 						<p class="card-item-count" id="card-item-count"><%= count %></p>
 					</div>
 				</a>
-				<% if (loggedInUser == null) { %>
+				<% 	if (loggedInUser == null) 
+					{ 	
+				%>
 				<div class="sign-element">
 					<div class="img-container">
 						<img src="<%= request.getContextPath() %>/images/profile_icon.png" alt="image not found" id="profile-icon">
@@ -64,11 +70,14 @@
 						<div class="clr"></div>
 					</div>
 				</div>
-				<% }else{ %>
+				<% 	}
+					else
+					{ 	
+				%>
 				<a href="<%= request.getContextPath() %>/jsp/logout.jsp" class="logout-btn">
 					Logout
 				</a>
-				<% } %>
+				<% 	} 	%>
 				<div class="clr"></div>
 			</nav>
 		</header>
