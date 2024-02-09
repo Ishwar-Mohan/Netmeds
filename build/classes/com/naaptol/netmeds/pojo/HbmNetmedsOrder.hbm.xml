@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.naaptol.netmeds.pojo.HbmNetmedsOrder" 
+    table="Hbm_Netmeds_Orders"
+>
+
+    <id
+        name="orderId"
+        type="java.lang.Long"
+        column="order_id"
+    >
+    
+        <generator class="native" />
+    </id>
+
+    <property
+        name="ordersDate"
+        type="java.sql.Timestamp"
+        column="orders_date"
+        not-null="true"
+        length="10"
+    />
+    <property
+        name="totalCost"
+        type="java.math.BigDecimal"
+        column="total_cost"
+        not-null="true"
+        length="10"
+    />
+    <property
+        name="createdBy"
+        type="java.lang.String"
+        column="created_by"
+        not-null="true"
+        length="255"
+    />
+    <property
+        name="createdDate"
+        type="java.sql.Timestamp"
+        column="created_date"
+        length="19"
+    />
+    <property
+        name="modifiedBy"
+        type="java.lang.String"
+        column="modified_by"
+        length="255"
+    />
+    <property
+        name="modifiedDate"
+        type="java.sql.Timestamp"
+        column="modified_date"
+        length="19"
+    />
+    <property
+        name="isActive"
+        type="java.lang.String"
+        column="is_active"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to HbmNetmedsAddToCart -->
+    <set
+        name="hbmNetmedsAddToCartsByOrderId"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="order_id" />
+        </key>
+        <one-to-many 
+            class="com.naaptol.netmeds.pojo.HbmNetmedsAddToCart"
+        />
+    </set>
+
+    <!-- bi-directional one-to-many association to HbmNetmedsOrdersDetail -->
+    <set
+        name="hbmNetmedsOrdersDetailsByOrderId"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="order_id" />
+        </key>
+        <one-to-many 
+            class="com.naaptol.netmeds.pojo.HbmNetmedsOrdersDetail"
+        />
+    </set>
+   
+    <!-- bi-directional many-to-one association to HbmNetmedsCustomer -->
+    <many-to-one
+        name="hbmNetmedsCustomerByCustomerId"
+        class="com.naaptol.netmeds.pojo.HbmNetmedsCustomer"
+        not-null="true"
+    >
+        <column name="customer_id" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

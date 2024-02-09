@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Netmeds" basedir="." default="deployApp">
+
+	<property name="srcdir" value="src" />
+	<property name="libsrcdir" value="${basedir}/lib" />
+	<property name="libdir" value="${basedir}/WebContent/WEB-INF/lib" />
+	<property name="bindir" value="${basedir}/WebContent/WEB-INF/classes" />
+	<property name="gensrcdir" value="src" />
+	
+	<property name="db.url" value="jdbc:mysql://192.168.57.5:3306/NT006" />
+	<property name="db.driver" value="com.mysql.jdbc.Driver" />
+	<property name="db.user" value="ishwar.mohan" />
+	<property name="db.password" value=")#EhWuwI" />
+
+	<path id="cp">
+		<fileset dir="${libsrcdir}"/>
+	</path>
+	
+	<target name="clean">
+		<delete dir="WebContent/WEB-INF/classes"/>
+		<delete dir="dist"/>
+		<delete dir="D:/dev/jboss-4.0.2/server/default/deploy/Netmeds.war"/>
+		<delete dir="dist/Netmeds.war"/>
+	</target>
+	
+	<target name="init" depends="clean">
+		<mkdir dir="WebContent/WEB-INF/classes" /> 
+		<mkdir dir="dist" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac destdir="WebContent/WEB-INF/classes" debug="true" srcdir="${srcdir}">
+		<classpath refid="cp"/>
+		</javac>
+		<copy todir="${bindir}">
+			<fileset dir="${srcdir}">
+				<include name="**/*.properties" />
+				<include name="*.cfg.xml" />
+				<include name="**/*.hbm.xml" />
+			</fileset>
+		</copy>
+		<copy todir="${libdir}">
+			<fileset dir="${libsrcdir}" />
+		</copy>
+	</target>
+	
+	<target name="war" depends="compile">
+		<war destfile="dist/Netmeds.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="${basedir}/WebContent"/>
+			<lib dir="${libdir}"/>
+			<classes dir="${bindir}"/>
+		</war>
+	</target>	
+	
+	<target name="deployApp" depends="war">
+		<copy todir="D:/dev/jboss-4.0.2/server/default/deploy" file="dist/Netmeds.war">
+		</copy>
+	</target>
+	
+	
+	<target name="gen-hbm">
+		<taskdef name="middlegen" classname="middlegen.MiddlegenTask" classpathref="cp" />
+		<middlegen appname="testHB" prefsdir="${srcdir}" gui="false" databaseurl="${db.url}" driver="${db.driver}" username="${db.user}" password="${db.password}" schema="" catalog="" includeViews="false">
+			
+			<table generate="true" name="Hbm_Netmeds_Customer" />
+			<table generate="true" name="Hbm_Netmeds_Address" />
+			<table generate="true" name="Hbm_Netmeds_Cities" />
+			<table generate="true" name="Hbm_Netmeds_States" />
+			<table generate="true" name="Hbm_Netmeds_Product" />
+			<table generate="true" name="Hbm_Netmeds_Orders" />
+			<table generate="true" name="Hbm_Netmeds_Orders_details" />
+			<table generate="true" name="Hbm_Netmeds_AddToCart" />
+			<table generate="true" name="Hbm_Netmeds_Categories" />
+			
+			<!-- Plugins -->
+			<hibernate destination="${basedir}\${srcdir}" package="com.naaptol.netmeds.pojo" standardGeneratorScheme="native" javaTypeMapper="middlegen.plugins.hibernate.HibernateJavaTypeMapper" />
+		</middlegen>
+	</target>
+	
+	<target name="gen-java" depends="gen-hbm">
+		<taskdef name="hbm2java" classname="net.sf.hibernate.tool.hbm2java.Hbm2JavaTask" classpathref="cp" />
+
+		<hbm2java output="${basedir}\${srcdir}">
+			<fileset dir="${basedir}\${srcdir}">
+			<include name="**/*.hbm.xml" />
+			</fileset>
+		</hbm2java>
+	</target>	
+		
+</project>

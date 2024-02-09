@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.naaptol.netmeds.pojo.HbmNetmedsOrdersDetail" 
+    table="Hbm_Netmeds_Orders_details"
+>
+
+    <id
+        name="orderDetailsId"
+        type="java.lang.Long"
+        column="order_details_id"
+    >
+    
+        <generator class="native" />
+    </id>
+
+    <property
+        name="quantity"
+        type="java.lang.Long"
+        column="quantity"
+        length="19"
+    />
+    <property
+        name="price"
+        type="java.math.BigDecimal"
+        column="price"
+        not-null="true"
+        length="10"
+    />
+    <property
+        name="shippingAddress"
+        type="java.lang.String"
+        column="shipping_address"
+        length="200"
+    />
+    <property
+        name="paymentType"
+        type="java.lang.String"
+        column="payment_type"
+        length="20"
+    />
+    <property
+        name="createdBy"
+        type="java.lang.String"
+        column="created_by"
+        not-null="true"
+        length="255"
+    />
+    <property
+        name="createdDate"
+        type="java.sql.Timestamp"
+        column="created_date"
+        length="19"
+    />
+    <property
+        name="modifiedBy"
+        type="java.lang.String"
+        column="modified_by"
+        length="255"
+    />
+    <property
+        name="modifiedDate"
+        type="java.sql.Timestamp"
+        column="modified_date"
+        length="19"
+    />
+    <property
+        name="isActive"
+        type="java.lang.String"
+        column="is_active"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to HbmNetmedsOrder -->
+    <many-to-one
+        name="hbmNetmedsOrderByOrderId"
+        class="com.naaptol.netmeds.pojo.HbmNetmedsOrder"
+        not-null="true"
+    >
+        <column name="order_id" />
+    </many-to-one>
+    
+    <!-- bi-directional many-to-one association to HbmNetmedsProduct -->
+    <many-to-one
+        name="hbmNetmedsProductByProductId"
+        class="com.naaptol.netmeds.pojo.HbmNetmedsProduct"
+        not-null="true"
+    >
+        <column name="product_id" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

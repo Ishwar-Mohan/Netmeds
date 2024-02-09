@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.naaptol.netmeds.pojo.HbmNetmedsCity" 
+    table="Hbm_Netmeds_Cities"
+>
+
+    <id
+        name="cityId"
+        type="java.lang.Long"
+        column="city_id"
+    >
+    
+        <generator class="native" />
+    </id>
+
+    <property
+        name="cityName"
+        type="java.lang.String"
+        column="city_name"
+        length="100"
+    />
+    <property
+        name="createdBy"
+        type="java.lang.String"
+        column="created_by"
+        not-null="true"
+        length="255"
+    />
+    <property
+        name="createdDate"
+        type="java.sql.Timestamp"
+        column="created_date"
+        length="19"
+    />
+    <property
+        name="modifiedBy"
+        type="java.lang.String"
+        column="modified_by"
+        length="255"
+    />
+    <property
+        name="modifiedDate"
+        type="java.sql.Timestamp"
+        column="modified_date"
+        length="19"
+    />
+    <property
+        name="isActive"
+        type="java.lang.String"
+        column="is_active"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to HbmNetmedsState -->
+    <many-to-one
+        name="hbmNetmedsState"
+        class="com.naaptol.netmeds.pojo.HbmNetmedsState"
+        not-null="true"
+    >
+        <column name="state_id" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>
