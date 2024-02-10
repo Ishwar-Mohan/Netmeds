@@ -66,61 +66,61 @@
                 					</div>
                 					<div class="clr"></div>
             					</div>
-   					<%	}	%>
-				        <a href="<%= request.getContextPath() %>" class="add-more-redirect">
-						<div class="add-more">
-				                	<h4>ADD MORE ITEMS</h4>
-				                	<h4 class="add-more-right">+</h4>
-				        	</div>
-            				</a>
-        			</div>
-        		</div>
-        
-      			<div class="right-container">
-	      		<%
-	      			Map innerSecond = (Map) map.get("secondMap");
-	      		%>
-		        <h3 class="lc-heading">PAYMENT DETAILS</h3>
-		        <div class="payment-details">
-		        	<h4>MRP Total</h4>
-		                <h4 class="rs">Rs <%= innerSecond.get("orignalPrice") %></h4>
-		        </div>
-		        <div class="payment-details">
-		                <h4>Additional Discount</h4>
-		                <h4 class="rs">- Rs <%= innerSecond.get("save") %></h4>
-		        </div>
-		        <div class="payment-details">
-		                <h4>Total Amount</h4>
-		                <h4 class="rs">Rs <%= innerSecond.get("discountPrice") %></h4>
-		        </div>
-		        <div class="payment-details">
-		                <h4>Shipping / Delivery Charges</h4>
-		                <h4 class="rs">Rs 40.00</h4>
-		        </div>
-		    	<%
-				BigDecimal totalPay = (new BigDecimal("40")).add((BigDecimal)innerSecond.get("discountPrice"));
-		    	%>
-		        <div class="payment-details" id="total-payable"> 
-		                <h4>Total Payable</h4>
-		                <h4 class="rs">Rs <%= totalPay %></h4>
-		        </div>
-		        <div class="payment-details" id="total-saving">
-		                <h4>Total Savings</h4>
-		                <h4 class="rs">Rs <%= innerSecond.get("save") %></h4>
-		        </div>
-		        <div class="pay-detail-footer">
-		                <div>
-		                    	<p>Total Payable</p>
-		                    	<h2>Rs <%= totalPay %></h2>
-		                </div>
-		                <div id="proceed-btn-container">
-		                    	<a href="<%= request.getContextPath() %>/jsp/order.jsp" class="proceed-btn">PROCEED</a>
-		                </div>
-		        </div>
+	   					<%	}	%>
+					        <a href="<%= request.getContextPath() %>" class="add-more-redirect">
+							<div class="add-more">
+					                	<h4>ADD MORE ITEMS</h4>
+					                	<h4 class="add-more-right">+</h4>
+					        	</div>
+	            				</a>
+	        			</div>
+	        		</div>
+	        
+	      			<div class="right-container">
+		      		<%
+		      			Map innerSecond = (Map) map.get("secondMap");
+		      		%>
+			        <h3 class="lc-heading">PAYMENT DETAILS</h3>
+			        <div class="payment-details">
+			        	<h4>MRP Total</h4>
+			                <h4 class="rs">Rs <%= innerSecond.get("orignalPrice") %></h4>
+			        </div>
+			        <div class="payment-details">
+			                <h4>Additional Discount</h4>
+			                <h4 class="rs">- Rs <%= innerSecond.get("save") %></h4>
+			        </div>
+			        <div class="payment-details">
+			                <h4>Total Amount</h4>
+			                <h4 class="rs">Rs <%= innerSecond.get("discountPrice") %></h4>
+			        </div>
+			        <div class="payment-details">
+			                <h4>Shipping / Delivery Charges</h4>
+			                <h4 class="rs">Rs 40.00</h4>
+			        </div>
+			    	<%
+					BigDecimal totalPay = (new BigDecimal("40")).add((BigDecimal)innerSecond.get("discountPrice"));
+			    	%>
+			        <div class="payment-details" id="total-payable"> 
+			                <h4>Total Payable</h4>
+			                <h4 class="rs">Rs <%= totalPay %></h4>
+			        </div>
+			        <div class="payment-details" id="total-saving">
+			                <h4>Total Savings</h4>
+			                <h4 class="rs">Rs <%= innerSecond.get("save") %></h4>
+			        </div>
+			        <div class="pay-detail-footer">
+			                <div>
+			                    	<p>Total Payable</p>
+			                    	<h2>Rs <%= totalPay %></h2>
+			                </div>
+			                <div id="proceed-btn-container">
+			                    	<a href="<%= request.getContextPath() %>/jsp/order.jsp" class="proceed-btn">PROCEED</a>
+			                </div>
+			        </div>
+			</div>
+			<div class="clr"></div>
 		</div>
-		<div class="clr"></div>
-	</div>
- </div>
-<% 	} 	%>
+	 </div>
+	<% 	} 	%>
 </body>
 </html>
