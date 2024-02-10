@@ -110,11 +110,11 @@
 		        </div>
 		        <div class="pay-detail-footer">
 		                <div>
-		                    <p>Total Payable</p>
-		                    <h2>Rs <%= totalPay %></h2>
+		                    	<p>Total Payable</p>
+		                    	<h2>Rs <%= totalPay %></h2>
 		                </div>
 		                <div id="proceed-btn-container">
-		                    <a href="<%= request.getContextPath() %>/jsp/order.jsp" class="proceed-btn">PROCEED</a>
+		                    	<a href="<%= request.getContextPath() %>/jsp/order.jsp" class="proceed-btn">PROCEED</a>
 		                </div>
 		        </div>
 		</div>
