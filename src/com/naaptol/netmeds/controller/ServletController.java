@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.naaptol.netmeds.helper.Helper;
 
-public class ServletController extends HttpServlet {
-       
+public class ServletController extends HttpServlet 
+{
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException 
 	{
 		String reqestType = req.getParameter("requestType");
@@ -22,6 +22,7 @@ public class ServletController extends HttpServlet {
 		else if("registerRequest".equals(reqestType))
 		{		
 			boolean flag = Helper.registerCredentials(req);
+			
 			if(flag == true)
 			{
 				res.sendRedirect(req.getContextPath()+"/jsp/signUp.jsp");
@@ -30,6 +31,7 @@ public class ServletController extends HttpServlet {
 		else if("addProductRequest".equals(reqestType))
 		{		
 			boolean flag = Helper.addProductByAdmin(req);
+			
 			if(flag == true)
 			{
 				res.sendRedirect(req.getContextPath()+"/jsp/adminPanel.jsp");
@@ -38,6 +40,7 @@ public class ServletController extends HttpServlet {
 		else if("changeAddressRequest".equals(reqestType))
 		{		
 			boolean flag = Helper.changeAddress(req);
+			
 			if(flag == true)
 			{
 				res.sendRedirect(req.getContextPath()+"/jsp/order.jsp");
