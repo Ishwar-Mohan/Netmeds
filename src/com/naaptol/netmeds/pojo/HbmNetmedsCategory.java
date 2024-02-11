@@ -7,8 +7,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /** @author Hibernate CodeGenerator */
-public class HbmNetmedsCategory implements Serializable {
-
+public class HbmNetmedsCategory implements Serializable 
+{
     /** identifier field */
     private Long categoryId;
 
@@ -37,7 +37,8 @@ public class HbmNetmedsCategory implements Serializable {
     private Set hbmNetmedsProductsByCategoryId;
 
     /** full constructor */
-    public HbmNetmedsCategory(String categoryName, Long fkCategoryId, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, Set hbmNetmedsProductsByCategoryId) {
+    public HbmNetmedsCategory(String categoryName, Long fkCategoryId, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, Set hbmNetmedsProductsByCategoryId) 
+    {
         this.categoryName = categoryName;
         this.fkCategoryId = fkCategoryId;
         this.createdBy = createdBy;
@@ -49,85 +50,102 @@ public class HbmNetmedsCategory implements Serializable {
     }
 
     /** default constructor */
-    public HbmNetmedsCategory() {
-    }
+    public HbmNetmedsCategory() {}
 
-    public Long getCategoryId() {
+    public Long getCategoryId() 
+    {
         return this.categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(Long categoryId) 
+    {
         this.categoryId = categoryId;
     }
 
-    public String getCategoryName() {
+    public String getCategoryName()
+    {
         return this.categoryName;
     }
 
-    public void setCategoryName(String categoryName) {
+    public void setCategoryName(String categoryName) 
+    {
         this.categoryName = categoryName;
     }
 
-    public Long getFkCategoryId() {
+    public Long getFkCategoryId() 
+    {
         return this.fkCategoryId;
     }
 
-    public void setFkCategoryId(Long fkCategoryId) {
+    public void setFkCategoryId(Long fkCategoryId)
+    {
         this.fkCategoryId = fkCategoryId;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy()
+    {
         return this.createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(String createdBy)
+    {
         this.createdBy = createdBy;
     }
 
-    public Date getCreatedDate() {
+    public Date getCreatedDate() 
+    {
         return this.createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Date createdDate)
+    {
         this.createdDate = createdDate;
     }
 
-    public String getModifiedBy() {
+    public String getModifiedBy() 
+    {
         return this.modifiedBy;
     }
 
-    public void setModifiedBy(String modifiedBy) {
+    public void setModifiedBy(String modifiedBy) 
+    {
         this.modifiedBy = modifiedBy;
     }
 
-    public Date getModifiedDate() {
+    public Date getModifiedDate() 
+    {
         return this.modifiedDate;
     }
 
-    public void setModifiedDate(Date modifiedDate) {
+    public void setModifiedDate(Date modifiedDate)
+    {
         this.modifiedDate = modifiedDate;
     }
 
-    public String getIsActive() {
+    public String getIsActive()
+    {
         return this.isActive;
     }
 
-    public void setIsActive(String isActive) {
+    public void setIsActive(String isActive)
+    {
         this.isActive = isActive;
     }
 
-    public Set getHbmNetmedsProductsByCategoryId() {
+    public Set getHbmNetmedsProductsByCategoryId()
+    {
         return this.hbmNetmedsProductsByCategoryId;
     }
 
-    public void setHbmNetmedsProductsByCategoryId(Set hbmNetmedsProductsByCategoryId) {
+    public void setHbmNetmedsProductsByCategoryId(Set hbmNetmedsProductsByCategoryId) 
+    {
         this.hbmNetmedsProductsByCategoryId = hbmNetmedsProductsByCategoryId;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         return new ToStringBuilder(this)
             .append("categoryId", getCategoryId())
             .toString();
     }
-
 }
