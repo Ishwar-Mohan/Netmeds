@@ -7,8 +7,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /** @author Hibernate CodeGenerator */
-public class HbmNetmedsCustomer implements Serializable {
-
+public class HbmNetmedsCustomer implements Serializable 
+{
     /** identifier field */
     private Long customerId;
 
@@ -55,7 +55,8 @@ public class HbmNetmedsCustomer implements Serializable {
     private Set hbmNetmedsAddToCartsByCustomerId;
 
     /** full constructor */
-    public HbmNetmedsCustomer(String firstName, String lastName, String email, String mobileNumber, String password, HbmNetmedsAddress address, String isAdmin, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, Set hbmNetmedsOrdersByCustomerId, Set hbmNetmedsAddToCartsByCustomerId) {
+    public HbmNetmedsCustomer(String firstName, String lastName, String email, String mobileNumber, String password, HbmNetmedsAddress address, String isAdmin, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, Set hbmNetmedsOrdersByCustomerId, Set hbmNetmedsAddToCartsByCustomerId)
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -73,133 +74,162 @@ public class HbmNetmedsCustomer implements Serializable {
     }
 
     /** default constructor */
-    public HbmNetmedsCustomer() {
-    }
+    public HbmNetmedsCustomer() {}
 
-    public Long getCustomerId() {
+    public Long getCustomerId()
+    {
         return this.customerId;
     }
 
-    public void setCustomerId(Long customerId) {
+    public void setCustomerId(Long customerId) 
+    {
         this.customerId = customerId;
     }
 
-    public String getFirstName() {
+    public String getFirstName() 
+    {
         return this.firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName)
+    {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public String getLastName()
+    {
         return this.lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
+    public String getEmail() 
+    {
         return this.email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) 
+    {
         this.email = email;
     }
 
-    public String getMobileNumber() {
+    public String getMobileNumber() 
+    {
         return this.mobileNumber;
     }
 
-    public void setMobileNumber(String mobileNumber) {
+    public void setMobileNumber(String mobileNumber)
+    {
         this.mobileNumber = mobileNumber;
     }
 
-    public String getPassword() {
+    public String getPassword()
+    {
         return this.password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) 
+    {
         this.password = password;
     }
     
-    public HbmNetmedsAddress getAddress() {
+    public HbmNetmedsAddress getAddress() 
+    {
         return address;
     }
 
-    public void setAddress(HbmNetmedsAddress address) {
+    public void setAddress(HbmNetmedsAddress address) 
+    {
         this.address = address;
     }
 
-    public String getIsAdmin() {
+    public String getIsAdmin() 
+    {
         return this.isAdmin;
     }
 
-    public void setIsAdmin(String isAdmin) {
+    public void setIsAdmin(String isAdmin)
+    {
         this.isAdmin = isAdmin;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy() 
+    {
         return this.createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(String createdBy) 
+    {
         this.createdBy = createdBy;
     }
 
-    public Date getCreatedDate() {
+    public Date getCreatedDate() 
+    {
         return this.createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Date createdDate) 
+    {
         this.createdDate = createdDate;
     }
 
-    public String getModifiedBy() {
+    public String getModifiedBy() 
+    {
         return this.modifiedBy;
     }
 
-    public void setModifiedBy(String modifiedBy) {
+    public void setModifiedBy(String modifiedBy)
+    {
         this.modifiedBy = modifiedBy;
     }
 
-    public Date getModifiedDate() {
+    public Date getModifiedDate() 
+    {
         return this.modifiedDate;
     }
 
-    public void setModifiedDate(Date modifiedDate) {
+    public void setModifiedDate(Date modifiedDate)
+    {
         this.modifiedDate = modifiedDate;
     }
 
-    public String getIsActive() {
+    public String getIsActive() 
+    {
         return this.isActive;
     }
 
-    public void setIsActive(String isActive) {
+    public void setIsActive(String isActive)
+    {
         this.isActive = isActive;
     }
 
-    public Set getHbmNetmedsOrdersByCustomerId() {
+    public Set getHbmNetmedsOrdersByCustomerId()
+    {
         return this.hbmNetmedsOrdersByCustomerId;
     }
 
-    public void setHbmNetmedsOrdersByCustomerId(Set hbmNetmedsOrdersByCustomerId) {
+    public void setHbmNetmedsOrdersByCustomerId(Set hbmNetmedsOrdersByCustomerId) 
+    {
         this.hbmNetmedsOrdersByCustomerId = hbmNetmedsOrdersByCustomerId;
     }
 
-    public Set getHbmNetmedsAddToCartsByCustomerId() {
+    public Set getHbmNetmedsAddToCartsByCustomerId() 
+    {
         return this.hbmNetmedsAddToCartsByCustomerId;
     }
 
-    public void setHbmNetmedsAddToCartsByCustomerId(Set hbmNetmedsAddToCartsByCustomerId) {
+    public void setHbmNetmedsAddToCartsByCustomerId(Set hbmNetmedsAddToCartsByCustomerId) 
+    {
         this.hbmNetmedsAddToCartsByCustomerId = hbmNetmedsAddToCartsByCustomerId;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         return new ToStringBuilder(this)
             .append("customerId", getCustomerId())
             .toString();
     }
-
 }
