@@ -22,6 +22,7 @@ public class LoginDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -40,35 +41,37 @@ public class LoginDao
 	 			HbmNetmedsCustomer hbmNetmedsCustomer = (HbmNetmedsCustomer) result[0] ; 
 	 			HbmNetmedsAddress hbmNetmedsAddress = (HbmNetmedsAddress) result[1] ; 
 	 			
-	            map.put("email", (String) hbmNetmedsCustomer.getEmail()); 
-	            map.put("password", (String) hbmNetmedsCustomer.getPassword()); 
-	            map.put("customerId", Long.toString(hbmNetmedsCustomer.getCustomerId()));
-	            map.put("first-name", hbmNetmedsCustomer.getFirstName());
-	            map.put("last-name", hbmNetmedsCustomer.getLastName());
-	            map.put("number", hbmNetmedsCustomer.getMobileNumber());
-	            map.put("address", hbmNetmedsAddress.getAddress());
-	            map.put("city", hbmNetmedsAddress.getCity());
-	            map.put("state", hbmNetmedsAddress.getState());
-	            map.put("pincode", hbmNetmedsAddress.getPincode());
-	            map.put("landmark", hbmNetmedsAddress.getLandmark());
-	        }
+	            		map.put("email", (String) hbmNetmedsCustomer.getEmail()); 
+			        map.put("password", (String) hbmNetmedsCustomer.getPassword()); 
+			        map.put("customerId", Long.toString(hbmNetmedsCustomer.getCustomerId()));
+			        map.put("first-name", hbmNetmedsCustomer.getFirstName());
+			        map.put("last-name", hbmNetmedsCustomer.getLastName());
+			        map.put("number", hbmNetmedsCustomer.getMobileNumber());
+			        map.put("address", hbmNetmedsAddress.getAddress());
+			        map.put("city", hbmNetmedsAddress.getCity());
+		             	map.put("state", hbmNetmedsAddress.getState());
+		            	map.put("pincode", hbmNetmedsAddress.getPincode());
+		            	map.put("landmark", hbmNetmedsAddress.getLandmark());
+	        	}
+			
 	 		transaction.commit();
-	        return map;
-	    } 
+	        	return map;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return map;
 	}
 	
@@ -78,6 +81,7 @@ public class LoginDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -93,27 +97,29 @@ public class LoginDao
 	 		while (iterator.hasNext())
 	 		{
 	 			HbmNetmedsCustomer hbmNetmedsCustomer = (HbmNetmedsCustomer) iterator.next(); 
-	            map.put("admin_userId", hbmNetmedsCustomer.getEmail());
-	            map.put("admin_password", hbmNetmedsCustomer.getPassword());
-	            map.put("first-name", "Admin");
-	        }
+	            		map.put("admin_userId", hbmNetmedsCustomer.getEmail());
+	            		map.put("admin_password", hbmNetmedsCustomer.getPassword());
+	            		map.put("first-name", "Admin");
+	        	}
+			
 	 		transaction.commit();
-	        return map;
-	    } 
+	        	return map;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return map;
 	}
 }
