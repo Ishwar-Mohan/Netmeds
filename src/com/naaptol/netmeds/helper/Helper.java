@@ -204,23 +204,29 @@ public class Helper
 	public static Map placeOrder(String whoLoggedIn, String modeOfPayment)
 	{
 		boolean flag = DisplayDao.placeOrderDetails(whoLoggedIn, modeOfPayment);
-		if(flag == true){
+		
+		if(flag == true)
+		{
 			return DisplayDao.getOrderDetails(whoLoggedIn);
 		}
+		
 		return null;
 	}
 	
 	public static String removeFromCart(String cartId, String whoLoggedIn)
 	{
 		boolean flag = DisplayDao.removeFromCartProducts(cartId, whoLoggedIn);
+		
 		if(flag == true)
 			return "sucess";
+		
 		return "";
 	}
 
 	public static boolean addProductByAdmin(HttpServletRequest req)
 	{
 		Map map = new LinkedHashMap();
+		
 		map.put("product-name", req.getParameter("product-name"));
 		map.put("manufacturer", req.getParameter("manufacturer"));
 		map.put("product-image", req.getParameter("product-image"));
@@ -244,7 +250,7 @@ public class Helper
 		hbmNetmedsAddress.setState(req.getParameter("state"));
 		hbmNetmedsAddress.setCity(req.getParameter("city-r"));
 		hbmNetmedsAddress.setLandmark(req.getParameter("landmark"));
+		
 		return DisplayDao.changeAddress(hbmNetmedsCustomer, hbmNetmedsAddress);
 	}
-	
 }
