@@ -6,8 +6,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /** @author Hibernate CodeGenerator */
-public class HbmNetmedsCity implements Serializable {
-
+public class HbmNetmedsCity implements Serializable 
+{
     /** identifier field */
     private Long cityId;
 
@@ -33,7 +33,8 @@ public class HbmNetmedsCity implements Serializable {
     private com.naaptol.netmeds.pojo.HbmNetmedsState hbmNetmedsState;
 
     /** full constructor */
-    public HbmNetmedsCity(String cityName, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsState hbmNetmedsState) {
+    public HbmNetmedsCity(String cityName, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsState hbmNetmedsState) 
+    {
         this.cityName = cityName;
         this.createdBy = createdBy;
         this.createdDate = createdDate;
@@ -44,77 +45,92 @@ public class HbmNetmedsCity implements Serializable {
     }
 
     /** default constructor */
-    public HbmNetmedsCity() {
-    }
+    public HbmNetmedsCity() {}
 
-    public Long getCityId() {
+    public Long getCityId() 
+    {
         return this.cityId;
     }
 
-    public void setCityId(Long cityId) {
+    public void setCityId(Long cityId) 
+    {
         this.cityId = cityId;
     }
 
-    public String getCityName() {
+    public String getCityName() 
+    {
         return this.cityName;
     }
 
-    public void setCityName(String cityName) {
+    public void setCityName(String cityName)
+    {
         this.cityName = cityName;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy() 
+    {
         return this.createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(String createdBy)
+    {
         this.createdBy = createdBy;
     }
 
-    public Date getCreatedDate() {
+    public Date getCreatedDate() 
+    {
         return this.createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Date createdDate)
+    {
         this.createdDate = createdDate;
     }
 
-    public String getModifiedBy() {
+    public String getModifiedBy()
+    {
         return this.modifiedBy;
     }
 
-    public void setModifiedBy(String modifiedBy) {
+    public void setModifiedBy(String modifiedBy) 
+    {
         this.modifiedBy = modifiedBy;
     }
 
-    public Date getModifiedDate() {
+    public Date getModifiedDate()
+    {
         return this.modifiedDate;
     }
 
-    public void setModifiedDate(Date modifiedDate) {
+    public void setModifiedDate(Date modifiedDate)
+    {
         this.modifiedDate = modifiedDate;
     }
 
-    public String getIsActive() {
+    public String getIsActive() 
+    {
         return this.isActive;
     }
 
-    public void setIsActive(String isActive) {
+    public void setIsActive(String isActive)
+    {
         this.isActive = isActive;
     }
 
-    public com.naaptol.netmeds.pojo.HbmNetmedsState getHbmNetmedsState() {
+    public com.naaptol.netmeds.pojo.HbmNetmedsState getHbmNetmedsState() 
+    {
         return this.hbmNetmedsState;
     }
 
-    public void setHbmNetmedsState(com.naaptol.netmeds.pojo.HbmNetmedsState hbmNetmedsState) {
+    public void setHbmNetmedsState(com.naaptol.netmeds.pojo.HbmNetmedsState hbmNetmedsState)
+    {
         this.hbmNetmedsState = hbmNetmedsState;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         return new ToStringBuilder(this)
             .append("cityId", getCityId())
             .toString();
     }
-
 }
