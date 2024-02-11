@@ -4,9 +4,9 @@
 <hibernate-configuration>
    <session-factory>
    
-   	  <property name="hibernate.hbm2ddl.auto">
-   	  	 update
-   	  </property>
+   	<property name="hibernate.hbm2ddl.auto">
+   	  	update
+   	</property>
    	  
       <property name = "hibernate.dialect">
          org.hibernate.dialect.MySQLDialect
@@ -31,6 +31,7 @@
       </property>
       
       <!-- List of XML mapping files -->
+      
       <mapping resource = "com/naaptol/netmeds/pojo/HbmNetmedsCustomer.hbm.xml"/>
       <mapping resource = "com/naaptol/netmeds/pojo/HbmNetmedsAddress.hbm.xml"/>
       <mapping resource = "com/naaptol/netmeds/pojo/HbmNetmedsCity.hbm.xml"/>
