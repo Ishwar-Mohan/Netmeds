@@ -7,8 +7,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /** @author Hibernate CodeGenerator */
-public class HbmNetmedsOrdersDetail implements Serializable {
-
+public class HbmNetmedsOrdersDetail implements Serializable 
+{
     /** identifier field */
     private Long orderDetailsId;
 
@@ -46,7 +46,8 @@ public class HbmNetmedsOrdersDetail implements Serializable {
     private com.naaptol.netmeds.pojo.HbmNetmedsProduct hbmNetmedsProductByProductId;
 
     /** full constructor */
-    public HbmNetmedsOrdersDetail(Long quantity, BigDecimal price, String shippingAddress, String paymentType, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId, com.naaptol.netmeds.pojo.HbmNetmedsProduct hbmNetmedsProductByProductId) {
+    public HbmNetmedsOrdersDetail(Long quantity, BigDecimal price, String shippingAddress, String paymentType, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId, com.naaptol.netmeds.pojo.HbmNetmedsProduct hbmNetmedsProductByProductId)
+    {
         this.quantity = quantity;
         this.price = price;
         this.shippingAddress = shippingAddress;
@@ -61,98 +62,120 @@ public class HbmNetmedsOrdersDetail implements Serializable {
     }
 
     /** default constructor */
-    public HbmNetmedsOrdersDetail() {
-    }
+    public HbmNetmedsOrdersDetail() {}
 
-    public Long getOrderDetailsId() {
+    public Long getOrderDetailsId() 
+    {
         return this.orderDetailsId;
     }
 
-    public void setOrderDetailsId(Long orderDetailsId) {
+    public void setOrderDetailsId(Long orderDetailsId) 
+    {
         this.orderDetailsId = orderDetailsId;
     }
 
-    public Long getQuantity() {
+    public Long getQuantity() 
+    {
         return this.quantity;
     }
 
-    public void setQuantity(Long quantity) {
+    public void setQuantity(Long quantity) 
+    {
         this.quantity = quantity;
     }
 
-    public BigDecimal getPrice() {
+    public BigDecimal getPrice() 
+    {
         return this.price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(BigDecimal price) 
+    {
         this.price = price;
     }
 
-    public String getShippingAddress() {
+    public String getShippingAddress() 
+    {
         return this.shippingAddress;
     }
 
-    public void setShippingAddress(String shippingAddress) {
+    public void setShippingAddress(String shippingAddress) 
+    {
         this.shippingAddress = shippingAddress;
     }
 
-    public String getPaymentType() {
+    public String getPaymentType() 
+    {
         return this.paymentType;
     }
 
-    public void setPaymentType(String paymentType) {
+    public void setPaymentType(String paymentType)
+    {
         this.paymentType = paymentType;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy() 
+    {
         return this.createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(String createdBy)
+    {
         this.createdBy = createdBy;
     }
 
-    public Date getCreatedDate() {
+    public Date getCreatedDate()
+    {
         return this.createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Date createdDate) 
+    {
         this.createdDate = createdDate;
     }
 
-    public String getModifiedBy() {
+    public String getModifiedBy() 
+    {
         return this.modifiedBy;
     }
 
-    public void setModifiedBy(String modifiedBy) {
+    public void setModifiedBy(String modifiedBy) 
+    {
         this.modifiedBy = modifiedBy;
     }
 
-    public Date getModifiedDate() {
+    public Date getModifiedDate() 
+    {
         return this.modifiedDate;
     }
 
-    public void setModifiedDate(Date modifiedDate) {
+    public void setModifiedDate(Date modifiedDate)
+    {
         this.modifiedDate = modifiedDate;
     }
 
-    public String getIsActive() {
+    public String getIsActive() 
+    {
         return this.isActive;
     }
 
-    public void setIsActive(String isActive) {
+    public void setIsActive(String isActive)
+    {
         this.isActive = isActive;
     }
 
-    public com.naaptol.netmeds.pojo.HbmNetmedsOrder getHbmNetmedsOrderByOrderId() {
+    public com.naaptol.netmeds.pojo.HbmNetmedsOrder getHbmNetmedsOrderByOrderId()
+    {
         return this.hbmNetmedsOrderByOrderId;
     }
 
-    public void setHbmNetmedsOrderByOrderId(com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId) {
+    public void setHbmNetmedsOrderByOrderId(com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId) 
+    {
         this.hbmNetmedsOrderByOrderId = hbmNetmedsOrderByOrderId;
     }
 
-    public com.naaptol.netmeds.pojo.HbmNetmedsProduct getHbmNetmedsProductByProductId() {
+    public com.naaptol.netmeds.pojo.HbmNetmedsProduct getHbmNetmedsProductByProductId()
+    {
         return this.hbmNetmedsProductByProductId;
     }
 
@@ -160,10 +183,10 @@ public class HbmNetmedsOrdersDetail implements Serializable {
         this.hbmNetmedsProductByProductId = hbmNetmedsProductByProductId;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         return new ToStringBuilder(this)
             .append("orderDetailsId", getOrderDetailsId())
             .toString();
     }
-
 }
