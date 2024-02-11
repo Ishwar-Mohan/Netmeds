@@ -62,6 +62,7 @@
             		</div>
             		<div class="clr"></div>
         	</div>
+
         	<div class="left-container">
         		<div class="left-container-inner">
             			<label class="payment-labels">PREFERD PAYMENT</label>
