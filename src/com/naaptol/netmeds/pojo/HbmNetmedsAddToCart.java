@@ -6,10 +6,9 @@ import java.util.Date;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-
 /** @author Hibernate CodeGenerator */
-public class HbmNetmedsAddToCart implements Serializable {
-
+public class HbmNetmedsAddToCart implements Serializable 
+{
     /** identifier field */
     private Long cartItemsId;
 
@@ -44,7 +43,8 @@ public class HbmNetmedsAddToCart implements Serializable {
     private com.naaptol.netmeds.pojo.HbmNetmedsProduct hbmNetmedsProductByProductId;
 
     /** full constructor */
-    public HbmNetmedsAddToCart(Long specificItemQuantity, BigDecimal specificItemPrice, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId, com.naaptol.netmeds.pojo.HbmNetmedsCustomer hbmNetmedsCustomerByCustomerId, HbmNetmedsProduct hbmNetmedsProductByProductId) {
+    public HbmNetmedsAddToCart(Long specificItemQuantity, BigDecimal specificItemPrice, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId, com.naaptol.netmeds.pojo.HbmNetmedsCustomer hbmNetmedsCustomerByCustomerId, HbmNetmedsProduct hbmNetmedsProductByProductId) 
+    {
         this.specificItemQuantity = specificItemQuantity;
         this.specificItemPrice = specificItemPrice;
         this.createdBy = createdBy;
@@ -58,38 +58,45 @@ public class HbmNetmedsAddToCart implements Serializable {
     }
 
     /** default constructor */
-    public HbmNetmedsAddToCart() {
-    }
+    public HbmNetmedsAddToCart() {}
 
-    public Long getCartItemsId() {
+    public Long getCartItemsId() 
+    {
         return this.cartItemsId;
     }
 
-    public void setCartItemsId(Long cartItemsId) {
+    public void setCartItemsId(Long cartItemsId) 
+    {
         this.cartItemsId = cartItemsId;
     }
 
-    public Long getSpecificItemQuantity() {
+    public Long getSpecificItemQuantity() 
+    {
         return this.specificItemQuantity;
     }
 
-    public void setSpecificItemQuantity(Long specificItemQuantity) {
+    public void setSpecificItemQuantity(Long specificItemQuantity)
+    {
         this.specificItemQuantity = specificItemQuantity;
     }
 
-    public BigDecimal getSpecificItemPrice() {
+    public BigDecimal getSpecificItemPrice() 
+    {
         return this.specificItemPrice;
     }
 
-    public void setSpecificItemPrice(BigDecimal specificItemPrice) {
+    public void setSpecificItemPrice(BigDecimal specificItemPrice)
+    {
         this.specificItemPrice = specificItemPrice;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy()
+    {
         return this.createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(String createdBy) 
+    {
         this.createdBy = createdBy;
     }
 
@@ -97,62 +104,75 @@ public class HbmNetmedsAddToCart implements Serializable {
         return this.createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Date createdDate)
+    {
         this.createdDate = createdDate;
     }
 
-    public String getModifiedBy() {
+    public String getModifiedBy()
+    {
         return this.modifiedBy;
     }
 
-    public void setModifiedBy(String modifiedBy) {
+    public void setModifiedBy(String modifiedBy)
+    {
         this.modifiedBy = modifiedBy;
     }
 
-    public Date getModifiedDate() {
+    public Date getModifiedDate()
+    {
         return this.modifiedDate;
     }
 
-    public void setModifiedDate(Date modifiedDate) {
+    public void setModifiedDate(Date modifiedDate) 
+    {
         this.modifiedDate = modifiedDate;
     }
 
-    public String getIsActive() {
+    public String getIsActive() 
+    {
         return this.isActive;
     }
 
-    public void setIsActive(String isActive) {
+    public void setIsActive(String isActive)
+    {
         this.isActive = isActive;
     }
 
-    public com.naaptol.netmeds.pojo.HbmNetmedsOrder getHbmNetmedsOrderByOrderId() {
+    public com.naaptol.netmeds.pojo.HbmNetmedsOrder getHbmNetmedsOrderByOrderId()
+    {
         return this.hbmNetmedsOrderByOrderId;
     }
 
-    public void setHbmNetmedsOrderByOrderId(com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId) {
+    public void setHbmNetmedsOrderByOrderId(com.naaptol.netmeds.pojo.HbmNetmedsOrder hbmNetmedsOrderByOrderId)
+    {
         this.hbmNetmedsOrderByOrderId = hbmNetmedsOrderByOrderId;
     }
 
-    public com.naaptol.netmeds.pojo.HbmNetmedsCustomer getHbmNetmedsCustomerByCustomerId() {
+    public com.naaptol.netmeds.pojo.HbmNetmedsCustomer getHbmNetmedsCustomerByCustomerId() 
+    {
         return this.hbmNetmedsCustomerByCustomerId;
     }
 
-    public void setHbmNetmedsCustomerByCustomerId(com.naaptol.netmeds.pojo.HbmNetmedsCustomer hbmNetmedsCustomerByCustomerId) {
+    public void setHbmNetmedsCustomerByCustomerId(com.naaptol.netmeds.pojo.HbmNetmedsCustomer hbmNetmedsCustomerByCustomerId) 
+    {
         this.hbmNetmedsCustomerByCustomerId = hbmNetmedsCustomerByCustomerId;
     }
     
-    public com.naaptol.netmeds.pojo.HbmNetmedsProduct getHbmNetmedsProductByProductId() {
+    public com.naaptol.netmeds.pojo.HbmNetmedsProduct getHbmNetmedsProductByProductId() 
+    {
         return this.hbmNetmedsProductByProductId;
     }
 
-    public void setHbmNetmedsProductByProductId(com.naaptol.netmeds.pojo.HbmNetmedsProduct hbmNetmedsProductByProductId) {
+    public void setHbmNetmedsProductByProductId(com.naaptol.netmeds.pojo.HbmNetmedsProduct hbmNetmedsProductByProductId)
+    {
         this.hbmNetmedsProductByProductId = hbmNetmedsProductByProductId;
     }
 
-    public String toString() {
+    public String toString()
+    {
         return new ToStringBuilder(this)
             .append("cartItemsId", getCartItemsId())
             .toString();
     }
-
 }
