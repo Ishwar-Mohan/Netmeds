@@ -33,6 +33,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -43,33 +44,35 @@ public class DisplayDao
 	 		query.setParameter("isActive", "Y");
 	 		List result = query.list();
 	 		Iterator iterator = result.iterator();
-	 		
+			
 	 		int i = 0;
 	 		while (iterator.hasNext())
 	 		{
 	 			Map map = new LinkedHashMap();
 	 			HbmNetmedsCategory hbmNetmedsCategory = (HbmNetmedsCategory) iterator.next();
 	 			map.put("categoryId", hbmNetmedsCategory.getCategoryId());
-	            map.put("categoryName", hbmNetmedsCategory.getCategoryName());
+	            		map.put("categoryName", hbmNetmedsCategory.getCategoryName());
 	 			li.add(map);
-	        }
+	        	}
+			
 	 		transaction.commit();
-	        return li;
-	    } 
+	        	return li;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return li;
 	}
 	
@@ -79,6 +82,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -89,33 +93,35 @@ public class DisplayDao
 	 		query.setParameter("isActive", "Y");
 	 		List result = query.list();
 	 		Iterator iterator = result.iterator();
-	 		
+			
 	 		int i = 0;
 	 		while (iterator.hasNext())
 	 		{
 	 			Map map = new LinkedHashMap();
 	 			HbmNetmedsCategory hbmNetmedsCategory = (HbmNetmedsCategory) iterator.next();
 	 			map.put("categoryId", hbmNetmedsCategory.getCategoryId());
-	            map.put("categoryName", hbmNetmedsCategory.getCategoryName()); 
+	            		map.put("categoryName", hbmNetmedsCategory.getCategoryName()); 
 	 			li.add(map);
-	        }
+	        	}
+			
 	 		transaction.commit();
-	        return li;
-	    } 
+	        	return li;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            	factory.close();
 		}
+		
 		return li;
 	}
 	
@@ -125,6 +131,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -144,24 +151,26 @@ public class DisplayDao
 				map.put("stateId", hbmNetmedsState.getStateId());
 				map.put("stateName", hbmNetmedsState.getStateName()); 
 				OuterMap.put(Integer.toString(i++), map);
-	        }
+	        	}
+			
 	 		transaction.commit();
-	        return OuterMap;
-	    } 
+	        	return OuterMap;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return OuterMap;
 	}
 	
@@ -171,6 +180,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -187,7 +197,8 @@ public class DisplayDao
 	 		{
 	 			hbmNetmedsState = (HbmNetmedsState) iterator.next();
 	 			System.out.println(hbmNetmedsState.getStateId());
-	        }
+	        	}
+			
 	 		transaction.commit();
 	 		
 	 		transaction = session.beginTransaction();
@@ -206,24 +217,26 @@ public class DisplayDao
 	 			map.put("cityName", hbmNetmedsCity.getCityName()); 
 	 			System.out.println(hbmNetmedsCity.getCityName());
 				OuterMap.put(Integer.toString(i++), map);
-	        }
+	        	}
+			
 	 		transaction.commit();
-	        return OuterMap;
-	    } 
+	        	return OuterMap;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return OuterMap;
 	}
 	
@@ -233,6 +246,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -251,34 +265,36 @@ public class DisplayDao
 	 			
 	 			Map map = new LinkedHashMap();
 				OuterMap.put(Integer.toString(i++), map);
-	        }
+	        	}
+			
 	 		transaction.commit();
-	        return OuterMap;
-	    } 
+	        	return OuterMap;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	   	 }
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return OuterMap;
 	}
 	
 	public static List getAllProducts()
 	{
 		List result = new ArrayList();
-		
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -289,22 +305,23 @@ public class DisplayDao
 	 		result = query.list();
 
 	 		transaction.commit();
-	        return result;
-	    } 
+	        	return result;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	   	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return result;
 	}
 	
@@ -314,6 +331,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -346,75 +364,78 @@ public class DisplayDao
 	 
 	 				 OuterMap.put(Integer.toString(i++), map);
 	 			}
-	        }
+	        	}
+			
 	 		transaction.commit();
-	        return OuterMap;
-	    } 
+	        	return OuterMap;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return OuterMap;
 	}
 	
 	public static Map getProductsByName(String productName) 
 	{
-	    Map outerMap = new LinkedHashMap();
-	    SessionFactory factory = null;
-	    Session session = null;
-	    Transaction transaction = null;
-	    try 
-	    {
-	        factory = new Configuration().configure().buildSessionFactory();
-	        session = factory.openSession();
-	        transaction = session.beginTransaction();
-	        Query query = session.createQuery("FROM HbmNetmedsProduct WHERE productName LIKE :productName");
-	        query.setParameter("productName", "%" + productName + "%");
-	        List<HbmNetmedsProduct> results = query.list();
-	        
-	        int i = 0;
-	        for (HbmNetmedsProduct hbmNetmedsProduct : results)
-	        {
-	            Map map = new LinkedHashMap();
-	            map.put("productId", hbmNetmedsProduct.getProductId());
-	            map.put("product_name", hbmNetmedsProduct.getProductName());
-	            map.put("description", hbmNetmedsProduct.getDescription());
-	            map.put("manufacturer", hbmNetmedsProduct.getManufacturer());
-	            map.put("product_image", hbmNetmedsProduct.getProductImages());
-	            map.put("mrp", hbmNetmedsProduct.getMrp());
-	            map.put("price", hbmNetmedsProduct.getPrice());
-	            map.put("stock", hbmNetmedsProduct.getStock());
-	            outerMap.put(Integer.toString(i++), map);
-	        }
-	        System.out.println("-----------"+outerMap);
-	        transaction.commit();
-	        return outerMap;
-	    }
-	    catch (Throwable ex) 
-	    {
-	        if (transaction != null)
-	            transaction.rollback();
+	    	Map outerMap = new LinkedHashMap();
+	    	SessionFactory factory = null;
+	    	Session session = null;
+	    	Transaction transaction = null;
+	    	try 
+	    	{
+			factory = new Configuration().configure().buildSessionFactory();
+		        session = factory.openSession();
+		        transaction = session.beginTransaction();
+		        Query query = session.createQuery("FROM HbmNetmedsProduct WHERE productName LIKE :productName");
+		        query.setParameter("productName", "%" + productName + "%");
+		        List<HbmNetmedsProduct> results = query.list();
 
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    } 
-	    finally 
-	    {
-	        if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
-	    }
-	    return outerMap;
+		        for (HbmNetmedsProduct hbmNetmedsProduct : results)
+		        {
+		            	Map map = new LinkedHashMap();
+		            	map.put("productId", hbmNetmedsProduct.getProductId());
+		            	map.put("product_name", hbmNetmedsProduct.getProductName());
+		            	map.put("description", hbmNetmedsProduct.getDescription());
+		            	map.put("manufacturer", hbmNetmedsProduct.getManufacturer());
+		            	map.put("product_image", hbmNetmedsProduct.getProductImages());
+		            	map.put("mrp", hbmNetmedsProduct.getMrp());
+		            	map.put("price", hbmNetmedsProduct.getPrice());
+		            	map.put("stock", hbmNetmedsProduct.getStock());
+		            	outerMap.put(Integer.toString(i++), map);
+		        }
+			
+		        System.out.println("-----------"+outerMap);
+		        transaction.commit();
+		        return outerMap;
+	    	}
+	    	catch (Throwable ex) 
+	    	{
+		   	if (transaction != null)
+	            		transaction.rollback();
+
+			System.err.println("Failed to create sessionFactory object.." + ex);
+	    	} 
+	    	finally 
+	    	{
+	        	if (session != null)
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
+	    	}
+		
+	    	return outerMap;
 	}
 	
 	public static Map getOrderDetails(String whoLoggedIn)
@@ -423,6 +444,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -441,28 +463,30 @@ public class DisplayDao
 	 			HbmNetmedsOrdersDetail hbmNetmedsOrdersDetail = (HbmNetmedsOrdersDetail) result[1];
 	 			HbmNetmedsCustomer hbmNetmedsCustomer = (HbmNetmedsCustomer) result[2];
 	 			map.put("name", hbmNetmedsCustomer.getFirstName()+" "+hbmNetmedsCustomer.getLastName());
-	            map.put("orderId", hbmNetmedsOrder.getOrderId()); 
-	            map.put("totalCost", hbmNetmedsOrder.getTotalCost()); 
-	            map.put("orderDate", hbmNetmedsOrder.getOrdersDate());
-	            map.put("shippingAddress", hbmNetmedsOrdersDetail.getShippingAddress());
-	        }
+	            		map.put("orderId", hbmNetmedsOrder.getOrderId()); 
+	            		map.put("totalCost", hbmNetmedsOrder.getTotalCost()); 
+	            		map.put("orderDate", hbmNetmedsOrder.getOrdersDate());
+	            		map.put("shippingAddress", hbmNetmedsOrdersDetail.getShippingAddress());
+	        	}
+			
 	 		transaction.commit();
-	        return map;
-	    } 
+	        	return map;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return map;
 	}
 	
@@ -472,6 +496,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -489,26 +514,28 @@ public class DisplayDao
 	 			Map map = new LinkedHashMap();
 	 			HbmNetmedsCategory hbmNetmedsCategory = (HbmNetmedsCategory) iterator.next();
 	 			map.put("categoryId", hbmNetmedsCategory.getCategoryId());
-	            map.put("categoryName", hbmNetmedsCategory.getCategoryName()); 
+	            		map.put("categoryName", hbmNetmedsCategory.getCategoryName()); 
 	 			li.add(map);
-	        }
+	        	}
+			
 	 		transaction.commit();
-	        return li;
-	    } 
+	        	return li;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return li;
 	}
 	
@@ -517,6 +544,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -533,23 +561,25 @@ public class DisplayDao
 	 		{
 	 			transaction.commit();
 	 			return "Already Present";
-	        }
+	        	}
+			
 	 		transaction.commit();
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	   	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -558,6 +588,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -571,22 +602,24 @@ public class DisplayDao
 	 		hbmNetmedsCategory.setIsActive("Y");
 	 		session.save(hbmNetmedsCategory);
 	 		transaction.commit();
+			
 	 		return "Sucessfully Added..!";
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -595,6 +628,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -607,22 +641,24 @@ public class DisplayDao
 	 		hbmNetmedsState.setIsActive("Y");
 	 		session.save(hbmNetmedsState);
 	 		transaction.commit();
+			
 	 		return "Sucessfully Added..!";
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -631,6 +667,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -643,10 +680,12 @@ public class DisplayDao
 	 		
 	 		Iterator iterator = result.iterator();
 	 		HbmNetmedsState hbmNetmedsState = null;
+			
 	 		while (iterator.hasNext())
 	 		{
 	 			hbmNetmedsState = (HbmNetmedsState) iterator.next(); 
 	 		}
+			
 	 		transaction.commit();
 	 		
 	 		transaction = session.beginTransaction();
@@ -656,23 +695,25 @@ public class DisplayDao
 	 		hbmNetmedsCity.setCreatedBy("1");
 	 		hbmNetmedsCity.setCreatedDate(new Date());
 	 		hbmNetmedsCity.setIsActive("Y");
+			
 	 		session.save(hbmNetmedsCity);
 	 		transaction.commit();
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -681,6 +722,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -697,23 +739,25 @@ public class DisplayDao
 	 		{
 	 			transaction.commit();
 	 			return "Already Present";
-	        }
+	        	}
+			
 	 		transaction.commit();
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -722,6 +766,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -736,22 +781,24 @@ public class DisplayDao
 	 		
 	 		session.save(hbmNetmedsCategory);
 	 		transaction.commit();
+			
 	 		return "Sucessfully Added..!";
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -760,6 +807,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -775,23 +823,25 @@ public class DisplayDao
 	 		{
 	 			transaction.commit();
 	 			return "Already Present";
-	        }
+	        	}
+			
 	 		transaction.commit();
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -800,6 +850,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -815,23 +866,25 @@ public class DisplayDao
 	 		{
 	 			transaction.commit();
 	 			return "Already Present";
-	        }
+	        	}
+			
 	 		transaction.commit();
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	   	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -840,6 +893,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -855,23 +909,25 @@ public class DisplayDao
 	 		{
 	 			transaction.commit();
 	 			return "Already Present";
-	        }
+	        	}
+			
 	 		transaction.commit();
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	   	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return "";
 	}
 	
@@ -881,6 +937,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -899,6 +956,7 @@ public class DisplayDao
 	 		{
 	 			hbmNetmedsCustomer = (HbmNetmedsCustomer) iterator1.next();
 	 		}
+			
 	 		transaction.commit();
 	 		
 	 		transaction = session.beginTransaction();
@@ -909,6 +967,7 @@ public class DisplayDao
 	 		
 	 		Iterator iterator = result.iterator();
 	 		HbmNetmedsProduct hbmNetmedsProduct = null;
+			
 	 		while (iterator.hasNext())
 	 		{
 	 			hbmNetmedsProduct = (HbmNetmedsProduct) iterator.next(); 
@@ -922,7 +981,7 @@ public class DisplayDao
 		 		hbmNetmedsAddToCart.setHbmNetmedsCustomerByCustomerId(hbmNetmedsCustomer);
 		 		hbmNetmedsAddToCart.setIsActive("Y");
 		 		session.save(hbmNetmedsAddToCart);
-	        }
+	        	}
 	 		
 	 		transaction.commit();
 	 		
@@ -934,22 +993,24 @@ public class DisplayDao
 	 		map.put("count", count);
 	 		System.out.println(count);
 	 		transaction.commit();
-	        return map;
-	    } 
+			
+	        	return map;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return map;
 	}
 	
@@ -958,6 +1019,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -970,10 +1032,12 @@ public class DisplayDao
 	 		
 	 		Iterator iterator = result.iterator();
 	 		HbmNetmedsCustomer hbmNetmedsCustomer = null;
+			
 	 		while (iterator.hasNext())
 	 		{
 	 			hbmNetmedsCustomer = (HbmNetmedsCustomer) iterator.next(); 
 	 		}
+			
 	 		transaction.commit();
 	 		
 	 		transaction = session.beginTransaction();
@@ -986,22 +1050,23 @@ public class DisplayDao
 	 		
 	 		transaction.commit();
 	 		
-	      return true;
-	    } 
+			return true;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return false;
 	}
 	
@@ -1011,6 +1076,7 @@ public class DisplayDao
 		SessionFactory factory = null;
 		Session session = null;
 		Transaction transaction = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -1030,91 +1096,94 @@ public class DisplayDao
 	 			HbmNetmedsAddress hbmNetmedsAddress = (HbmNetmedsAddress) result[1] ; 
 	 			
 	 			map.put("first-name", hbmNetmedsCustomer.getFirstName());
-	            map.put("last-name", hbmNetmedsCustomer.getLastName());
-	            map.put("customerId", Long.toString(hbmNetmedsCustomer.getCustomerId()));
-	            map.put("number", hbmNetmedsCustomer.getMobileNumber());
-	            map.put("address", hbmNetmedsAddress.getAddress());
-	            map.put("city", hbmNetmedsAddress.getCity());
-	            map.put("state", hbmNetmedsAddress.getState());
-	            map.put("pincode", hbmNetmedsAddress.getPincode());
-	            map.put("landmark", hbmNetmedsAddress.getLandmark());
-	        }
+	            		map.put("last-name", hbmNetmedsCustomer.getLastName());
+	            		map.put("customerId", Long.toString(hbmNetmedsCustomer.getCustomerId()));
+	            		map.put("number", hbmNetmedsCustomer.getMobileNumber());
+	            		map.put("address", hbmNetmedsAddress.getAddress());
+	            		map.put("city", hbmNetmedsAddress.getCity());
+	            		map.put("state", hbmNetmedsAddress.getState());
+	            		map.put("pincode", hbmNetmedsAddress.getPincode());
+	            		map.put("landmark", hbmNetmedsAddress.getLandmark());
+	        	}
+			
 	 		transaction.commit();
-	        return map;
-	    } 
+	        	return map;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return map;
 	}
 	
 	public static boolean changeAddress(HbmNetmedsCustomer hbmNetmedsCustomer, HbmNetmedsAddress hbmNetmedsAddress) 
 	{
-	    SessionFactory factory = null;
-	    Session session = null;
-	    Transaction transaction = null;
-	    try
-	    {
-	        factory = new Configuration().configure().buildSessionFactory();
-	        session = factory.openSession();
-	        transaction = session.beginTransaction();
+	    	SessionFactory factory = null;
+	    	Session session = null;
+	    	Transaction transaction = null;
+	    	try
+	    	{
+		        factory = new Configuration().configure().buildSessionFactory();
+		        session = factory.openSession();
+		        transaction = session.beginTransaction();
+	
+		        // Retrieve the customer object
+		        Query query = session.createQuery("FROM HbmNetmedsCustomer WHERE firstName = :whoLoggedIn and isActive = :isActive");
+		        query.setParameter("whoLoggedIn", hbmNetmedsCustomer.getFirstName());
+		        query.setParameter("isActive", "Y");
+		        List<HbmNetmedsCustomer> result = query.list();
+	
+		        if (!result.isEmpty()) 
+		        {
+		            	HbmNetmedsCustomer hbmNetmedsCustomer1 = result.get(0);
 
-	        // Retrieve the customer object
-	        Query query = session.createQuery("FROM HbmNetmedsCustomer WHERE firstName = :whoLoggedIn and isActive = :isActive");
-	        query.setParameter("whoLoggedIn", hbmNetmedsCustomer.getFirstName());
-	        query.setParameter("isActive", "Y");
-	        List<HbmNetmedsCustomer> result = query.list();
+			        // Update the mobile number
+			        Query query2 = session.createQuery("UPDATE HbmNetmedsCustomer SET mobileNumber = :mobileNumber WHERE firstName = :whoLoggedIn and isActive = :isActive");
+			        query2.setParameter("mobileNumber", hbmNetmedsCustomer.getMobileNumber());
+			        query2.setParameter("whoLoggedIn", hbmNetmedsCustomer.getFirstName());
+			        query2.setParameter("isActive", "Y");
+			        query2.executeUpdate();
+		
+			        // Update the address
+			        Query query1 = session.createQuery("UPDATE HbmNetmedsAddress SET address = :address, city = :city, state = :state WHERE customer = :customer and isActive = :isActive");
+			        query1.setParameter("address", hbmNetmedsAddress.getAddress());
+			        query1.setParameter("city", hbmNetmedsAddress.getCity());
+			        query1.setParameter("state", hbmNetmedsAddress.getState());
+			        query1.setParameter("customer", hbmNetmedsCustomer1);
+			        query1.setParameter("isActive", "Y");
+			        query1.executeUpdate();
+		
+			        transaction.commit();
+			        return true;
+	        	}
+	    	} 
+	    	catch (Throwable ex) 
+	    	{
+	        	if (transaction != null)
+	            		transaction.rollback();
 
-	        if (!result.isEmpty()) 
-	        {
-	            HbmNetmedsCustomer hbmNetmedsCustomer1 = result.get(0);
-
-	            // Update the mobile number
-	            Query query2 = session.createQuery("UPDATE HbmNetmedsCustomer SET mobileNumber = :mobileNumber WHERE firstName = :whoLoggedIn and isActive = :isActive");
-	            query2.setParameter("mobileNumber", hbmNetmedsCustomer.getMobileNumber());
-	            query2.setParameter("whoLoggedIn", hbmNetmedsCustomer.getFirstName());
-	            query2.setParameter("isActive", "Y");
-	            query2.executeUpdate();
-
-	            // Update the address
-	            Query query1 = session.createQuery("UPDATE HbmNetmedsAddress SET address = :address, city = :city, state = :state WHERE customer = :customer and isActive = :isActive");
-	            query1.setParameter("address", hbmNetmedsAddress.getAddress());
-	            query1.setParameter("city", hbmNetmedsAddress.getCity());
-	            query1.setParameter("state", hbmNetmedsAddress.getState());
-	            query1.setParameter("customer", hbmNetmedsCustomer1);
-	            query1.setParameter("isActive", "Y");
-	            query1.executeUpdate();
-
-	            transaction.commit();
-	            return true;
-	        }
-	    } 
-	    catch (Throwable ex) 
-	    {
-	        if (transaction != null)
-	            transaction.rollback();
-
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    } 
-	    finally
-	    {
-	        if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
-	    }
-	    return false;
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	} 
+	    	finally
+	    	{
+	        	if (session != null)
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
+	    	}
+		
+	    	return false;
 	}
 	
 	public static boolean addProductsByAdmin(Map map, String mainCategory, String subCategory)
@@ -1160,22 +1229,23 @@ public class DisplayDao
 	 		
 	 		transaction.commit();
 	 		
-	      return true;
-	    } 
+	      		return true;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return false;
 	}
 	
@@ -1185,6 +1255,7 @@ public class DisplayDao
 		Session session = null;
 		Transaction transaction = null;
 		Long count = null;
+		
 		try 
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -1196,22 +1267,24 @@ public class DisplayDao
 	 		query2.setParameter("isActive", "Y");
 	 		count = (Long) query2.uniqueResult();
 	 		transaction.commit();
-	        return count;
-	    } 
+			
+	        	return count;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return count;
 	}
 	
@@ -1249,13 +1322,14 @@ public class DisplayDao
 	 			innerMap.put("price", hbmNetmedsProduct.getPrice());
 	 			innerMap.put("stock", hbmNetmedsProduct.getStock()); 
 	 			innerMap.put("price", hbmNetmedsProduct.getPrice());
+				
 	 			HbmNetmedsAddToCart hbmNetmedsAddToCart = (HbmNetmedsAddToCart) results[1];
-	            innerMap.put("cartId", hbmNetmedsAddToCart.getCartItemsId());
-	            map.put(Integer.toString(i++), innerMap);
+	            		innerMap.put("cartId", hbmNetmedsAddToCart.getCartItemsId());
+	            		map.put(Integer.toString(i++), innerMap);
 	            
-	            originalPrice = originalPrice.add((BigDecimal) hbmNetmedsProduct.getMrp());
-	            discountedPrice = discountedPrice.add((BigDecimal) hbmNetmedsProduct.getPrice());
-	        }
+	            		originalPrice = originalPrice.add((BigDecimal) hbmNetmedsProduct.getMrp());
+	            		discountedPrice = discountedPrice.add((BigDecimal) hbmNetmedsProduct.getPrice());
+	        	}
 	 		
 	 		Map innerMapSecond = new LinkedHashMap();
 	 		innerMapSecond.put("orignalPrice", originalPrice);
@@ -1267,21 +1341,22 @@ public class DisplayDao
 	 		
 	 		transaction.commit();
 	 		System.out.println(map);
-	        return map;
-	    } 
+			
+	        	return map;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
 		
 		return map;
@@ -1294,6 +1369,7 @@ public class DisplayDao
 		Transaction transaction = null;
 		BigDecimal originalPrice = new BigDecimal("0");
  		BigDecimal discountedPrice = new BigDecimal("0");
+		
 		try    
 		{
 			factory = new Configuration().configure().buildSessionFactory();
@@ -1317,13 +1393,15 @@ public class DisplayDao
 		 		hbmNetmedsProduct = (HbmNetmedsProduct) result[3];
 		 		
 		 		originalPrice = originalPrice.add((BigDecimal) hbmNetmedsProduct.getMrp());
-	            discountedPrice = discountedPrice.add((BigDecimal) hbmNetmedsProduct.getPrice());
+	            		discountedPrice = discountedPrice.add((BigDecimal) hbmNetmedsProduct.getPrice());
 		 	}
 	 		
 		 	BigDecimal totalPay = (new BigDecimal("40")).add((BigDecimal) discountedPrice);
 		 	String shippingAddress = hbmNetmedsAddress.getAddress()+", ";
+			
 		 	if(hbmNetmedsAddress.getLandmark() != null)
 		 		shippingAddress += hbmNetmedsAddress.getLandmark();
+			
 		 	shippingAddress += ", "+hbmNetmedsAddress.getCity();
 		 	shippingAddress += ", "+hbmNetmedsAddress.getState();
 		 	shippingAddress += " - "+hbmNetmedsAddress.getPincode();
@@ -1353,6 +1431,7 @@ public class DisplayDao
 	 		transaction.commit();
 	 		
 	 		transaction = session.beginTransaction();
+			
 	 		for (Object[] result : results)
 		 	{
 	 			HbmNetmedsProduct hbmNetmedsProducts = (HbmNetmedsProduct) result[3];
@@ -1361,24 +1440,26 @@ public class DisplayDao
 		 		query1.setParameter("hbmNetmedsProductByProduct", hbmNetmedsProducts);
 		 		query1.executeUpdate();
 		 	}
+			
 	 		transaction.commit();
 	 		
-	      return true;
-	    } 
+	      		return true;
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
+		
 		return false;
 	}
 	
@@ -1395,20 +1476,20 @@ public class DisplayDao
 	 		transaction = session.beginTransaction();
 	 		session.save(netmedsProduct);
 	 		transaction.commit();
-	    } 
+	    	} 
 		catch (Throwable ex) 
 		{ 
 			if(transaction != null)
 				transaction.rollback();
 			
-	        System.err.println("Failed to create sessionFactory object.." + ex);
-	    }
+	        	System.err.println("Failed to create sessionFactory object.." + ex);
+	    	}
 		finally
 		{
 			if (session != null)
-	            session.close();
-	        if (factory != null)
-	            factory.close();
+	            		session.close();
+	        	if (factory != null)
+	            		factory.close();
 		}
 	}
 }
