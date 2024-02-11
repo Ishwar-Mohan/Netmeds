@@ -8,8 +8,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /** @author Hibernate CodeGenerator */
-public class HbmNetmedsProduct implements Serializable {
-
+public class HbmNetmedsProduct implements Serializable 
+{
     /** identifier field */
     private Long productId;
 
@@ -59,7 +59,8 @@ public class HbmNetmedsProduct implements Serializable {
     private Set hbmNetmedsOrdersDetailsByProductId;
 
     /** full constructor */
-    public HbmNetmedsProduct(String productName, String description, String manufacturer, String productImages, BigDecimal mrp, BigDecimal price, Integer stock, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsCategory hbmNetmedsCategoryByCategoryId, Set hbmNetmedsAddToCartsByProductId, Set hbmNetmedsOrdersDetailsByProductId) {
+    public HbmNetmedsProduct(String productName, String description, String manufacturer, String productImages, BigDecimal mrp, BigDecimal price, Integer stock, String createdBy, Date createdDate, String modifiedBy, Date modifiedDate, String isActive, com.naaptol.netmeds.pojo.HbmNetmedsCategory hbmNetmedsCategoryByCategoryId, Set hbmNetmedsAddToCartsByProductId, Set hbmNetmedsOrdersDetailsByProductId) 
+    {
         this.productName = productName;
         this.description = description;
         this.manufacturer = manufacturer;
@@ -78,141 +79,172 @@ public class HbmNetmedsProduct implements Serializable {
     }
 
     /** default constructor */
-    public HbmNetmedsProduct() {
-    }
+    public HbmNetmedsProduct() {}
 
-    public Long getProductId() {
+    public Long getProductId() 
+    {
         return this.productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(Long productId) 
+    {
         this.productId = productId;
     }
 
-    public String getProductName() {
+    public String getProductName() 
+    {
         return this.productName;
     }
 
-    public void setProductName(String productName) {
+    public void setProductName(String productName) 
+    {
         this.productName = productName;
     }
 
-    public String getDescription() {
+    public String getDescription() 
+    {
         return this.description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description) 
+    {
         this.description = description;
     }
 
-    public String getManufacturer() {
+    public String getManufacturer() 
+    {
         return this.manufacturer;
     }
 
-    public void setManufacturer(String manufacturer) {
+    public void setManufacturer(String manufacturer) 
+    {
         this.manufacturer = manufacturer;
     }
 
-    public String getProductImages() {
+    public String getProductImages() 
+    {
         return this.productImages;
     }
 
-    public void setProductImages(String productImages) {
+    public void setProductImages(String productImages)
+    {
         this.productImages = productImages;
     }
 
-    public BigDecimal getMrp() {
+    public BigDecimal getMrp() 
+    {
         return this.mrp;
     }
 
-    public void setMrp(BigDecimal mrp) {
+    public void setMrp(BigDecimal mrp) 
+    {
         this.mrp = mrp;
     }
 
-    public BigDecimal getPrice() {
+    public BigDecimal getPrice()
+    {
         return this.price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(BigDecimal price) 
+    {
         this.price = price;
     }
 
-    public Integer getStock() {
+    public Integer getStock()
+    {
         return this.stock;
     }
 
-    public void setStock(Integer stock) {
+    public void setStock(Integer stock) 
+    {
         this.stock = stock;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy()
+    {
         return this.createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(String createdBy) 
+    {
         this.createdBy = createdBy;
     }
 
-    public Date getCreatedDate() {
+    public Date getCreatedDate()
+    {
         return this.createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Date createdDate) 
+    {
         this.createdDate = createdDate;
     }
 
-    public String getModifiedBy() {
+    public String getModifiedBy()
+    {
         return this.modifiedBy;
     }
 
-    public void setModifiedBy(String modifiedBy) {
+    public void setModifiedBy(String modifiedBy) 
+    {
         this.modifiedBy = modifiedBy;
     }
 
-    public Date getModifiedDate() {
+    public Date getModifiedDate() 
+    {
         return this.modifiedDate;
     }
 
-    public void setModifiedDate(Date modifiedDate) {
+    public void setModifiedDate(Date modifiedDate) 
+    {
         this.modifiedDate = modifiedDate;
     }
 
-    public String getIsActive() {
+    public String getIsActive() 
+    {
         return this.isActive;
     }
 
-    public void setIsActive(String isActive) {
+    public void setIsActive(String isActive) 
+    {
         this.isActive = isActive;
     }
 
-    public com.naaptol.netmeds.pojo.HbmNetmedsCategory getHbmNetmedsCategoryByCategoryId() {
+    public com.naaptol.netmeds.pojo.HbmNetmedsCategory getHbmNetmedsCategoryByCategoryId()
+    {
         return this.hbmNetmedsCategoryByCategoryId;
     }
 
-    public void setHbmNetmedsCategoryByCategoryId(com.naaptol.netmeds.pojo.HbmNetmedsCategory hbmNetmedsCategoryByCategoryId) {
+    public void setHbmNetmedsCategoryByCategoryId(com.naaptol.netmeds.pojo.HbmNetmedsCategory hbmNetmedsCategoryByCategoryId)
+    {
         this.hbmNetmedsCategoryByCategoryId = hbmNetmedsCategoryByCategoryId;
     }
 
-    public Set getHbmNetmedsAddToCartsByProductId() {
+    public Set getHbmNetmedsAddToCartsByProductId()
+    {
         return this.hbmNetmedsAddToCartsByProductId;
     }
 
-    public void setHbmNetmedsAddToCartsByProductId(Set hbmNetmedsAddToCartsByProductId) {
+    public void setHbmNetmedsAddToCartsByProductId(Set hbmNetmedsAddToCartsByProductId) 
+    {
         this.hbmNetmedsAddToCartsByProductId = hbmNetmedsAddToCartsByProductId;
     }
 
-    public Set getHbmNetmedsOrdersDetailsByProductId() {
+    public Set getHbmNetmedsOrdersDetailsByProductId()
+    {
         return this.hbmNetmedsOrdersDetailsByProductId;
     }
 
-    public void setHbmNetmedsOrdersDetailsByProductId(Set hbmNetmedsOrdersDetailsByProductId) {
+    public void setHbmNetmedsOrdersDetailsByProductId(Set hbmNetmedsOrdersDetailsByProductId)
+    {
         this.hbmNetmedsOrdersDetailsByProductId = hbmNetmedsOrdersDetailsByProductId;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         return new ToStringBuilder(this)
             .append("productId", getProductId())
             .toString();
     }
-
 }
