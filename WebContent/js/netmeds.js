@@ -649,6 +649,7 @@ function ajaxRequest()
 	function addSubCategory()
 	{	
 		checkSubCategory();
+		
 		if($('#main-category-add').val() == null || $('#main-category-add').val() == "" || $('#main-category-add').val() == 0)
 		{
 			$('#errSubCategoryPresent').text("Select main Category First");
@@ -678,6 +679,7 @@ function ajaxRequest()
 	};
 	
 	var cityBool = false;
+	
 	function checkCity()
 	{	
 		var contextPath = $('#contextPath').val();
@@ -705,6 +707,7 @@ function ajaxRequest()
 	function addCity()
 	{	
 		checkSubCategory();
+		
 		if($('#state').val() == null || $('#state').val() == "" || $('#state').val() == 0)
 		{
 			$('#errCityPresent').text("Select main Category First");
@@ -734,9 +737,7 @@ function ajaxRequest()
 	{	
 		var contextPath = $('#contextPath').val();
 		var whoLoggedIn = $('#whoLoggedIn').val();
-		
 		var selectedPaymentMode = $('input[name="payment-mode-option"]:checked').val();
-		console.log(selectedPaymentMode);
 		$.post(
 				contextPath+"/ajax/ajaxController.jsp",
 				{
@@ -958,7 +959,6 @@ function ajaxRequest()
 	
 	function changeAddress()
 	{	
-		console.log(productId);
 		var contextPath = $('#contextPath').val();
 		$.post(
 				contextPath+"/ajax/ajaxController.jsp",
@@ -1197,13 +1197,13 @@ $('#cros-order').click(function(){
 
 $('#r-link').click(function(){
 	validateLogin.onReset();
-   $('#login-form-container').css('display','none');
-   $('#registration-form').css('display','inline-block');
+   	$('#login-form-container').css('display','none');
+   	$('#registration-form').css('display','inline-block');
 });
 
 $('#l-link').click(function(){
 	validateRegistration.onReset();
-    $('#login-form-container').css('display','inline-block');
-    $('#registration-form').css('display','none');
-    validateRegistration.onReset();
+    	$('#login-form-container').css('display','inline-block');
+    	$('#registration-form').css('display','none');
+    	validateRegistration.onReset();
 })
