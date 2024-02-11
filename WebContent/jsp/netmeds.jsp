@@ -103,11 +103,11 @@
 	            			<div class="all-product-container" id="all-product-container">
 				        <%
 				            	List result = Helper.getAllProductDetails();
-								Iterator iterator = result.iterator();
+						Iterator iterator = result.iterator();
 					 		
-					 			while (iterator.hasNext())
-					 			{
-					 				HbmNetmedsProduct hbmNetmedsProduct = (HbmNetmedsProduct) iterator.next();
+					 	while (iterator.hasNext())
+					 	{
+					 		HbmNetmedsProduct hbmNetmedsProduct = (HbmNetmedsProduct) iterator.next();
 				        %>
 	                		<div class="product-cart">
 	                			<%-- <input name="productId" id="productId" type="hidden" value="<%= hbmNetmedsProduct.getProductId() %>"> --%>
@@ -126,7 +126,8 @@
 				                <%
 				                	Map SessionMap = (Map) session.getAttribute("map");
 				            		String loggedInUser = (SessionMap != null && SessionMap.containsKey("first-name")) ? (String) SessionMap.get("first-name") : null;
-				            		if (loggedInUser == null)
+				            		
+							if (loggedInUser == null)
 							{
 				            	%>
 	            				<input type="button" value="ADD TO CART" class="btn" id="addToCart-btn">
